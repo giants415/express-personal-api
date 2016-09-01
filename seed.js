@@ -9,7 +9,24 @@
 //   if (err){
 //     return console.log("Error:", err);
 //   }
-
 //   console.log("Created new campsite", campsite._id)
 //   process.exit(); // we're all done! Exit the program.
 // })
+
+
+var db = require('./models');
+
+var new_show = {
+  title: 'Stranger Things',
+  numSeasons: 1,
+  description: 'A group of kids investigate the mysterious disappearance of their friend. Winona Ryder acts at an 11',
+  reasonItsGood: 'Great mystery that is never fully explained and a great deal of suspense keeps you on the edge of your seat'
+};
+
+db.Show.create (new_show, function(err, show){
+  if (err) {
+    return console.log ("Seed data not working, Error:", err);
+  }
+  console.log('Created new show', show._id)
+  process.exit();
+})

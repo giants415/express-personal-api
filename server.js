@@ -52,8 +52,19 @@ app.get('/api', function api_index(req, res) {
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me"}, // Sticking w/ this for the moment
-      {method: "POST", path: "/api/shows", description: "Where I will put the shows I like"} // I have changed this
+      {method: "POST", path: "/api/shows", description: "Wheres shows will be updated"}, // I have changed this
     ]
+  })
+});
+
+app.get('/api/profile', function(req, res) {
+  res.json({
+    name: 'Andrew Vinocur',
+    currentCity: 'San Francisco',
+    githubLink: 'https://github.com/giants415',
+    githubProfileImage: 'To be added',
+    personalSiteLink: 'https://giants415.github.io/',
+    pets: [{name: 'Mark Sanchez', type: 'Cat', breed: 'Prototypical Orange Tabby'}]
   })
 });
 

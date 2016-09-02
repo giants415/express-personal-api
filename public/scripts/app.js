@@ -24,7 +24,7 @@ $(document).ready(function(){
       method: 'POST',
       url: '/api/shows',
       data: $(this).serializeArray(),
-      success: onSuccess,
+      success: onSuccess, // create a separate onsuccess and push new show into client side array
       error: onError
     });
   });
@@ -40,7 +40,7 @@ function render () {
 function onSuccess(json) {
   console.log(json);
   allShows = json;
-  render(allShows);
+  render([allShows]);
 }
 
 function onError(json) {

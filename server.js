@@ -52,7 +52,8 @@ app.get('/api', function api_index(req, res) {
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me"}, // Sticking w/ this for the moment
-      {method: "POST", path: "/api/shows", description: "Wheres shows will be updated"}, // I have changed this
+      {method: 'GET', path: '/api/shows', description: 'See all of the shows'},
+      {method: "POST", path: "/api/shows", description: "Where shows will be updated"} // I have changed this
     ]
   })
 });
@@ -68,8 +69,12 @@ app.get('/api/profile', function(req, res) {
   })
 });
 
-app.get('/api/shows', function(req, res){
-  res.json(shows)
+app.get('/api/shows', function(req, res) {
+  db.Show.find()
+    .exec(function(err, shows) {
+      if (err) {return console.log("index error: "+ err); }
+    res.json(shows);
+  });
 });
 
 

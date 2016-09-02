@@ -23,6 +23,15 @@ var new_show = {
   reasonItsGood: 'Great mystery that is never fully explained and a great deal of suspense keeps you on the edge of your seat'
 };
 
+db.Show.remove({}, function(err, show){
+  console.log('removed all shows');
+});
+  // books_list.forEach(function (bookData) {
+  //   var book = new db.Book({
+  //     title: bookData.title,
+  //     image: bookData.image,
+  //     releaseDate: bookData.releaseDate
+
 db.Show.create (new_show, function(err, show){
   if (err) {
     return console.log ("Seed data not working, Error:", err);

@@ -68,6 +68,10 @@ app.get('/api/profile', function(req, res) {
   })
 });
 
+app.get('/api/shows', function(req, res){
+  res.json(shows)
+});
+
 
 /**********
  * SERVER *

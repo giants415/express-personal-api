@@ -20,7 +20,8 @@ var new_show = {
   title: 'Stranger Things',
   numSeasons: 1,
   description: 'A group of kids investigate the mysterious disappearance of their friend. Winona Ryder acts at an 11',
-  reasonItsGood: 'Great mystery that is never fully explained and a great deal of suspense keeps you on the edge of your seat'
+  reasonItsGood: 'Great mystery that is never fully explained and a great deal of suspense keeps you on the edge of your seat',
+  representativeImage: 'http://imgur.com/a/XfY3E'
 };
 
 db.Show.remove({}, function(err, show){

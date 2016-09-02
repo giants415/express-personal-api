@@ -42,12 +42,14 @@ app.get('/', function homepage(req, res) {
  * JSON API Endpoints
  */
 
+//route
 app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
   var documents = require('./views/documentations');
   res.json(documents);
 });
 
+//get profile info, eventually move this to a separate file
 app.get('/api/profile', function(req, res) {
   res.json({
     name: 'Andrew Vinocur',
@@ -59,12 +61,32 @@ app.get('/api/profile', function(req, res) {
   })
 });
 
+//get all shows
 app.get('/api/shows', function(req, res) {
   db.Show.find()
     .exec(function(err, shows) {
       if (err) {return console.log("index error: "+ err); }
     res.json(shows);
   });
+});
+
+//create a new show
+app.post('/api/shows', function(req, res){
+  var newShow = new db.Show({
+    title: req.body.title,
+    numSeasons: req.body.numSeasons,
+    description: req.body.description,
+    reasonItsGood: req.body.reasonItsGood,
+    representativeImage: req.body.representativeImage
+  });
+      newShow.save(function(err, show){
+        if (err) {
+          return console.log("save error: " + err);
+        } else {
+        console.log("saved ", show.title);
+        res.json(show);
+        }
+      });
 });
 
 

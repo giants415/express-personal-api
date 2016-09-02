@@ -16,7 +16,8 @@ var ShowSchema = new Schema({
   title: String,
   numSeasons: Number,
   description: String,
-  reasonItsGood: String
+  reasonItsGood: String,
+  representativeImage: String
 });
 
 var Show = mongoose.model('Show', ShowSchema);

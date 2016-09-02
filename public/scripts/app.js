@@ -1,6 +1,14 @@
 console.log("Sanity Check: JS is working!");
+var template;
+var $showsList;
+var allShows = [];
 
 $(document).ready(function(){
+
+  $showsList = $('#showTarget');
+
+  var source = $('#shows-template').html();
+  template = Handlebars.compile(source);
 
   $.ajax({
     method: 'GET',
@@ -23,9 +31,16 @@ $(document).ready(function(){
 
 }); //domReady closing tag
 
+function render () {
+  $showsList.empty();
+  var showsHtml = template({ shows: allShows});
+  $showsList.append(showsHtml);
+}
 
 function onSuccess(json) {
   console.log(json);
+  allShows = json;
+  render(allShows);
 }
 
 function onError(json) {

@@ -27,7 +27,7 @@
       </div>
     </div>
     <h2>Add your own awesome show!</h2>
-      <form class="form-inline" id="newShowForm">
+      <form class="form-horizontal" id="newShowForm">
         <input type="text" class="form-control" name="title" placeholder="Title of show">
         <input type="text" class="form-control" name="numSeasons" placeholder="How many seasons are currently out?">
         <input type="text" class="form-control" name="description" placeholder="Add a short description of the show">
@@ -35,5 +35,19 @@
         <input type="text" class="form-control" name="representativeImage" placeholder="Have an image that represents the show? Link it here!">
         <button type="submit" class="btn btn-default">Create your show listing!</button>
       </form>
+    <h3>Listing of shows already in our database</h3>
+    <div id='showTarget'>
+      <!-- handlebars template -->
+      <script id="shows-template" type="text/x-handlebars-template">
+        {{#each shows}}
+        <hr>
+          <h4>{{title}}</h4>
+          <h5>{{numSeasons}}</h5>
+          <h5>{{description}}</h5>
+          <h5>{{reasonItsGood}}</h5>
+          <h5>{{representativeImage}}</h5>
+        {{/each}}
+      </script>
+    </div>
   </body>
 </html>

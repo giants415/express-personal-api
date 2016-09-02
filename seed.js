@@ -21,7 +21,7 @@ var new_show = {
   numSeasons: 1,
   description: 'A group of kids investigate the mysterious disappearance of their friend. Winona Ryder acts at an 11',
   reasonItsGood: 'Great mystery that is never fully explained and a great deal of suspense keeps you on the edge of your seat',
-  representativeImage: 'http://imgur.com/a/XfY3E'
+  representativeImage: 'http://i.imgur.com/F98FVg3.png'
 };
 
 db.Show.remove({}, function(err, show){

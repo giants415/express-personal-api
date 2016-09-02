@@ -41,11 +41,11 @@
       <script id="shows-template" type="text/x-handlebars-template">
         {{#each shows}}
         <hr>
-          <h4>{{title}}</h4>
-          <h5>{{numSeasons}}</h5>
-          <h5>{{description}}</h5>
-          <h5>{{reasonItsGood}}</h5>
-          <h5>{{representativeImage}}</h5>
+          <h4>Title : {{title}}</h4>
+          <h5>Number of Seasons : {{numSeasons}}</h5>
+          <h5>Summary : {{description}}</h5>
+          <h5>Why I enjoy it : {{reasonItsGood}}</h5>
+          <img src="{{representativeImage}}" class="resizer" alt="show image" />
         {{/each}}
       </script>
     </div>

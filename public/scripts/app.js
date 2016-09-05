@@ -27,9 +27,10 @@ $(document).ready(function(){
       success: newShowSuccess, //  push new show into client side array
       error: onError
     });
+    location.reload();
   });
 
-  $showsList.on('click', '.deleteButton', function (){
+  $showsList.on('click', '.deleteButton', function () {
     console.log('delete button clicked', + $(this).attr('data-id'));
     $.ajax({
       method: 'DELETE',
@@ -37,6 +38,7 @@ $(document).ready(function(){
       success: deleteShow,
       error: deleteError,
     });
+    location.reload();
   });
 
 }); //domReady closing tag

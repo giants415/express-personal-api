@@ -94,7 +94,7 @@ app.delete('/api/shows/:id', function (req, res) {
   console.log('you want to delete ', req.params);
   var showId = req.params.id;
   db.Show.findOneAndRemove({ _id: showId }, function (err, deleteShow) {
-    res.json(deleteBook);
+    res.json(deleteShow);
   });
 });
 

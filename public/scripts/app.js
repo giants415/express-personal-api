@@ -30,10 +30,10 @@ $(document).ready(function(){
   });
 
   $showsList.on('click', '.deleteButton', function (){
-    console.log('delete button clicked'+$(this).attr('data-id'));
+    console.log('delete button clicked', + $(this).attr('data-id'));
     $.ajax({
       method: 'DELETE',
-      url: 'api/shows/'+$(this).attr('data-id'),
+      url: 'api/shows/' + $(this).attr('data-id'),
       success: deleteShow,
       error: deleteError,
     });

@@ -7,6 +7,7 @@ module.exports = {
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me"}, // Sticking w/ this for the moment
       {method: 'GET', path: '/api/shows', description: 'See all of the shows'},
-      {method: "POST", path: "/api/shows", description: "Where shows will be updated"} // I have changed this
+      {method: "POST", path: "/api/shows", description: "Where shows will be updated"},
+      {method: 'DELETE', path: '/api/shows/:id', description: 'Removes shows from both DB and frontend'} // I have changed this
     ]
   }

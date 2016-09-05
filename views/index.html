@@ -27,7 +27,7 @@
       </div>
     </div>
     <h2>Add your own awesome show!</h2>
-      <form class="form-horizontal" id="newShowForm">
+      <form class="form-horizontal" id="newShowForm" data-id={{_id}}>
         <input type="text" class="form-control" name="title" placeholder="Title of show">
         <input type="text" class="form-control" name="numSeasons" placeholder="How many seasons are currently out?">
         <input type="text" class="form-control" name="description" placeholder="Add a short description of the show">
@@ -46,7 +46,7 @@
           <h5>Summary : {{description}}</h5>
           <h5>Why I enjoy it : {{reasonItsGood}}</h5>
           <img src="{{representativeImage}}" class="resizer" alt="show image" />
-          <button type="button" class="deleteButton btn btn-danger">Delete this entry</button>
+          <button type="button" class="deleteButton btn btn-danger" data-id={{_id}}>Delete this entry</button>
         {{/each}}
       </script>
     </div>

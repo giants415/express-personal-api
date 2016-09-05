@@ -27,11 +27,6 @@ var new_show = {
 db.Show.remove({}, function(err, show){
   console.log('removed all shows');
 });
-  // books_list.forEach(function (bookData) {
-  //   var book = new db.Book({
-  //     title: bookData.title,
-  //     image: bookData.image,
-  //     releaseDate: bookData.releaseDate
 
 db.Show.create (new_show, function(err, show){
   if (err) {

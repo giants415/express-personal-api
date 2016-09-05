@@ -19,20 +19,30 @@ $(document).ready(function(){
 
   $('#newShowForm').on('submit', function(e) {
     e.preventDefault();
-    console.log('new book serialized', $(this).serializeArray());
+    console.log('new show serialized', $(this).serializeArray());
     $.ajax({
       method: 'POST',
       url: '/api/shows',
       data: $(this).serializeArray(),
-      success: onSuccess, // create a separate onsuccess and push new show into client side array
+      success: newShowSuccess, //  push new show into client side array
       error: onError
+    });
+  });
+
+  $showsList.on('click', '.deleteButton', function (){
+    console.log('delete button clicked'+$(this).attr('data-id'));
+    $.ajax({
+      method: 'DELETE',
+      url: 'api/shows/'+$(this).attr('data-id'),
+      success: deleteShow,
+      error: deleteError,
     });
   });
 
 }); //domReady closing tag
 
 function render () {
-  $showsList.empty();
+  // $showsList.empty(); // by removing this line, I keep the shows I've already added on my HTML
   var showsHtml = template({ shows: allShows});
   $showsList.append(showsHtml);
 }
@@ -43,6 +53,31 @@ function onSuccess(json) {
   render([allShows]);
 }
 
+function newShowSuccess (json) {
+  console.log('new show created');
+  // allShows.push(newShow);
+  // console.log(newShow);
+  allShows = json;
+  render([allShows]);
+}
+
+function deleteShow(json) {
+  var show = json;
+  var showId = show._id;
+  console.log('delete show ', showId);
+  for(var index = 0; index < allShows.length; index++){
+    if(allShows[index]._id === showId){
+      allShows.splice(index, 1);
+      break;
+    }
+  }
+  render();
+}
+
 function onError(json) {
   console.log('something went wrong w/ ajax');
+}
+
+function deleteError() {
+  console.log('error w/ deletion');
 }

@@ -71,7 +71,7 @@ app.get('/api/shows', function(req, res) {
 });
 
 //create a new show
-app.post('/api/shows', function(req, res){
+app.post('/api/shows', function(req, res) {
   var newShow = new db.Show({
     title: req.body.title,
     numSeasons: req.body.numSeasons,
@@ -89,6 +89,14 @@ app.post('/api/shows', function(req, res){
       });
 });
 
+//delete a currently listed show
+app.delete('/api/shows/:id', function (req, res) {
+  console.log('you want to delete ', req.params);
+  var showId = req.params.id;
+  db.Show.findOneAndRemove({ _id: showId }, function (err, deleteShow) {
+    res.json(deleteBook);
+  });
+});
 
 /**********
  * SERVER *

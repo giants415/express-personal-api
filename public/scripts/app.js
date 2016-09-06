@@ -41,6 +41,17 @@ $(document).ready(function(){
     location.reload();
   });
 
+  $showsList.on('click', '.review', function (e) {
+    e.preventDefault();
+    $.ajax({
+      method: 'POST',
+      url: '/api/books/' + $(this).attr('data-id'),
+      data: $(this).serializeArray(),
+      success: newReviewSuccess,
+      error: newReviewError
+    });
+  });
+
 }); //domReady closing tag
 
 function render () {
@@ -61,6 +72,22 @@ function newShowSuccess (json) {
   // console.log(newShow);
   allShows = json;
   render([allShows]);
+}
+
+function newReviewSuccess(json) {
+  var show = json;
+  var showId = show._id;
+  for(var index = 0; index < allShows.length; index++){
+    if(allShows[index]._id === showId){
+      allShows[index] = show;
+      break;
+    }
+  }
+  render();
+}
+
+function newReviewError () {
+  console.log('error adding the review');
 }
 
 function deleteShow(json) {

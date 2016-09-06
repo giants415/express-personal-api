@@ -22,6 +22,7 @@ var new_show = {
   description: 'A group of kids investigate the mysterious disappearance of their friend. Winona Ryder acts at an 11',
   reasonItsGood: 'Great mystery that is never fully explained and a great deal of suspense keeps you on the edge of your seat',
   representativeImage: 'http://i.imgur.com/F98FVg3.png'
+  readerReviews:
 };
 
 db.Show.remove({}, function(err, show){

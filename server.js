@@ -89,6 +89,22 @@ app.post('/api/shows', function(req, res) {
       });
 });
 
+//update a show with "an alternate user's review"
+app.post('/api/shows/:id/readerReviews', function (req, res){
+  var showId = req.body.showId;
+  db.Show.findById(showId)
+  .exec(function (err, foundShow) {
+    if (err){
+      console.log('error adding your review', err);
+    } else {
+      foundShow.readerReviews.push(req.body);
+      foundShow.save();
+      res.json(foundShow);
+    }
+  });
+});
+
+
 //delete a currently listed show
 app.delete('/api/shows/:id', function (req, res) {
   console.log('you want to delete ', req.params);

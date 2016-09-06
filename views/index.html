@@ -35,8 +35,8 @@
         <input type="text" class="form-control" name="representativeImage" placeholder="Have an image that represents the show? Link it here!">
         <button type="submit" class="btn btn-default">Create your show listing!</button>
       </form>
-    <h3>Listing of shows already in our database</h3>
-    <div id='showTarget'>
+    <h3>Listing of shows already in the database</h3>
+    <div id='showTarget' contenteditable="true">
       <!-- handlebars template -->
       <script id="shows-template" type="text/x-handlebars-template">
         {{#each shows}}
@@ -47,6 +47,8 @@
           <h5>Why I enjoy it : {{reasonItsGood}}</h5>
           <img src="{{representativeImage}}" class="resizer" alt="show image" />
           <button type="button" class="deleteButton btn btn-danger" data-id={{_id}}>Delete this entry</button>
+          <input type="text" class="form-control" name="readerReviews" placeholder="Did you like this show as well? Add your own review so others can see what you think!">
+          <button type="button" class="review btn btn-info" data-id={{_id}}>Submit your review</button>
         {{/each}}
       </script>
     </div>

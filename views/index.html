@@ -26,16 +26,18 @@
         </div>
       </div>
     </div>
-    <h2>Add an awesome show!</h2>
-      <form class="form-horizontal" id="newShowForm" data-id={{_id}}>
-        <input type="text" class="form-control" name="title" placeholder="Title of show">
-        <input type="text" class="form-control" name="numSeasons" placeholder="How many seasons are currently out?">
-        <input type="text" class="form-control" name="description" placeholder="Add a short description of the show">
-        <input type="text" class="form-control" name="reasonItsGood" placeholder="Why do you like this show?">
-        <input type="text" class="form-control" name="representativeImage" placeholder="Have an image that represents the show? Link it here!">
-        <button type="submit" class="btn btn-default">Create your show listing!</button>
-      </form>
-    <h2 id="currentShow">Current list of shows</h2>
+      <div id="showDiv">
+        <h2 id="showHeader">Add a Show</h2>
+          <form class="form-horizontal" id="newShowForm" data-id={{_id}}>
+            <input type="text" class="form-control" name="title" placeholder="Title of show">
+            <input type="text" class="form-control" name="numSeasons" placeholder="How many seasons are currently out?">
+            <input type="text" class="form-control" name="description" placeholder="Add a short description of the show">
+            <input type="text" class="form-control" name="reasonItsGood" placeholder="Why do you like this show?">
+            <input type="text" class="form-control" name="representativeImage" placeholder="Have an image that represents the show? Link it here!">
+            <button type="submit" id="listingBtn" class="btn btn-default">Create your show listing!</button>
+          </form>
+      <div>
+    <h2 id="currentShow">Current List of Shows</h2>
     <div id='showTarget'>
       <!-- handlebars template -->
       <script id="shows-template" type="text/x-handlebars-template">

@@ -44,6 +44,19 @@ a {
   display: block;
 }
 
+#showDiv{
+  
+}
+
+#showHeader {
+  margin-left: 120px;
+}
+
+#listingBtn {
+  margin-left: 278px;
+  margin-top: .5em;
+}
+
 #showTarget {
   text-align: center;
 }
@@ -55,6 +68,7 @@ a {
 
 #newShowForm {
   width: 35%;
+  padding-left: 3em;
 }
 
 #reviewBox {

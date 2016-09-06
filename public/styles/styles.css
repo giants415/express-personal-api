@@ -13,3 +13,11 @@ h1 {
   width: 20%;
   height: auto;
 }
+
+#newShowForm {
+  width: 35%;
+}
+
+#reviewBox {
+  width: 35%;
+}

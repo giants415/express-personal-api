@@ -1,23 +1,14 @@
-// var mongoose = require('mongoose'),
-//   Schema = mongoose.Schema;
-
-// var CampsiteSchema = new Schema({
-//   description: String
-// });
-
-// var Campsite = mongoose.model('Campsite', CampsiteSchema);
-
-// module.exports = Campsite;
-
 var mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
+  Schema = mongoose.Schema,
+  readerReview = require('./readerReview');
 
 var ShowSchema = new Schema({
   title: String,
   numSeasons: Number,
   description: String,
   reasonItsGood: String,
-  representativeImage: String
+  representativeImage: String,
+  readerReview: {type: Schema.Types.ObjectId, ref: 'readerReview'}
 });
 
 var Show = mongoose.model('Show', ShowSchema);

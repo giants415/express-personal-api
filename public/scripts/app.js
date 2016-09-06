@@ -15,7 +15,7 @@ $(document).ready(function(){
     url: '/api/shows',
     success: onSuccess,
     error: onError
-  })
+  });
 
   $('#newShowForm').on('submit', function(e) {
     e.preventDefault();
@@ -41,7 +41,7 @@ $(document).ready(function(){
     location.reload();
   });
 
-  $showsList.on('click', '.review', function (e) {
+  $showsList.on('click', '.review', function(e) {
     e.preventDefault();
     $.ajax({
       method: 'POST',
@@ -50,12 +50,13 @@ $(document).ready(function(){
       success: newReviewSuccess,
       error: newReviewError
     });
+    location.reload();
   });
 
 }); //domReady closing tag
 
 function render () {
-  // $showsList.empty(); // by removing this line, I keep the shows I've already added on my HTML
+  $showsList.empty(); // by removing this line, I keep the shows I've already added on my HTML
   var showsHtml = template({ shows: allShows});
   $showsList.append(showsHtml);
 }

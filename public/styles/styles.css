@@ -1,17 +1,56 @@
 body {
   color: #333;
   font-family: Helvetica, Arial, sans-serif;
-  background-color: skyblue; /* Sanity Check! */
+  background-color: #8cb0c7;
 }
 
 h1 {
   margin-top: 100px;
   text-align: center;
+  font-size: 3.5em;
+  text-decoration: underline;
+  color: #4b3071;
+}
+
+h4 {
+  padding-left: .65em;
+  color: 	#9c4444;
+}
+
+h5 {
+  padding-left: 1em;
+}
+
+a {
+  color: #224c74;
+}
+
+.deleteButton {
+  display: block;
 }
 
 .resizer {
   width: 20%;
   height: auto;
+  padding-left: 1em;
+  padding-bottom: .3em;
+}
+
+.buttons {
+  padding-left: 1em;
+}
+
+.review {
+  display: block;
+}
+
+#showTarget {
+  text-align: center;
+}
+
+#documentation {
+  padding-top: 1em;
+  text-align: center;
 }
 
 #newShowForm {
@@ -20,4 +59,9 @@ h1 {
 
 #reviewBox {
   width: 35%;
+}
+
+#currentShow {
+  text-align: center;
+  padding-top: 2em;
 }

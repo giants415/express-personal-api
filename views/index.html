@@ -21,12 +21,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <h1>Almost live...</h1>
-          <h4><a href="/api">Read My API Documentation</a></h4>
+          <h1><b>Andrew's Personal API</b></h1>
+          <h4 id="documentation"><a href="/api">Read My API Documentation</a></h4>
         </div>
       </div>
     </div>
-    <h2>Add another awesome show!</h2>
+    <h2>Add an awesome show!</h2>
       <form class="form-horizontal" id="newShowForm" data-id={{_id}}>
         <input type="text" class="form-control" name="title" placeholder="Title of show">
         <input type="text" class="form-control" name="numSeasons" placeholder="How many seasons are currently out?">
@@ -35,21 +35,23 @@
         <input type="text" class="form-control" name="representativeImage" placeholder="Have an image that represents the show? Link it here!">
         <button type="submit" class="btn btn-default">Create your show listing!</button>
       </form>
-    <h3>Current list of shows</h3>
-    <div id='showTarget' contenteditable="true">
+    <h2 id="currentShow">Current list of shows</h2>
+    <div id='showTarget'>
       <!-- handlebars template -->
       <script id="shows-template" type="text/x-handlebars-template">
         {{#each shows}}
         <hr>
-          <h4>Title : {{title}}</h4>
-          <h5>Number of Seasons : {{numSeasons}}</h5>
-          <h5>Summary : {{description}}</h5>
-          <h5>Why I enjoy it : {{reasonItsGood}}</h5>
+          <h4><b>Title</b> : {{title}}</h4>
+          <h5><b>Number of Seasons</b> : {{numSeasons}}</h5>
+          <h5><b>Summary</b> : {{description}}</h5>
+          <h5><b>Why I enjoy it</b> : {{reasonItsGood}}</h5>
           <img src="{{representativeImage}}" class="resizer" alt="show image" />
-          <button type="button" class="deleteButton btn btn-danger" data-id={{_id}}>Delete this entry</button>
-          <input type="text" id="reviewBox" class="form-control" name="readerReviews" placeholder="Did you like this show as well? Add your own review so others can see what you think!">
-          <button type="button" class="review btn btn-info" data-id={{_id}}>Submit your review</button>
-          <h5>Other reviews: {{readerReview}}</h5>
+            <div class=buttons>
+              <button type="button" class="deleteButton center-block btn btn-danger" data-id={{_id}}>Delete this entry</button>
+              <input type="text" id="reviewBox" class="form-control" name="readerReviews" placeholder="Did you like this show as well? Add your own review!">
+              <button type="button" class="review btn btn-info" data-id={{_id}}>Submit your review</button>
+            </div>
+          <!-- <h5>Other reviews: {{readerReview}}</h5> -->
         {{/each}}
       </script>
     </div>
